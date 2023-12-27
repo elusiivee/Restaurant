@@ -4,3 +4,7 @@ from .models import Dish, DishCategory
 def main(request):
     category = DishCategory.objects.filter(is_visible=True)
     return render(request, 'main_file.html')
+
+def menu(request):
+    category = DishCategory.objects.filter(is_visible=True)
+    return render(request, 'menu.html')

@@ -17,12 +17,13 @@ Including another URLconf
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
-from culinary_odissey.views import main
+from culinary_odissey.views import main, menu
 from MyRestaurant import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', main)
+    path('', main),
+    path('menu/',menu )
 ]
 
 if settings.DEBUG:

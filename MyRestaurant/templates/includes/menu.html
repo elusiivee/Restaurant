@@ -39,11 +39,10 @@
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-                {% for item in main_menu %}
-                    <li class="nav-item{% if item.title == 'Menu' %} active{% endif %}">
-                        <a href="{{ item.get_absolute_url }}" class="nav-link">{{ item.title }}</a>
-                    </li>
-                {% endfor %}
+                <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
+                <li class="nav-item active"> <a href="{% url 'menu' %}" class="nav-link">Menu</a></li>
+                {#  add another link#}
+
 
 	        </ul>
 	      </div>
@@ -57,7 +56,7 @@
         <div class="row no-gutters slider-text align-items-end justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
             <h1 class="mb-2 bread">Our Specialties</h1>
-            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Menu <i class="ion-ios-arrow-forward"></i></span></p>
+            <p class="breadcrumbs"><span class="mr-2"><a href="../index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Menu <i class="ion-ios-arrow-forward"></i></span></p>
           </div>
         </div>
       </div>

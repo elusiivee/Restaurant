@@ -16,14 +16,16 @@ Including another URLconf
 """
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path
-from culinary_odissey.views import main, menu
+from django.urls import path, include
+from culinary_odissey.views import main
+from app.views import menu
 from MyRestaurant import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', main),
-    path('menu/',menu )
+    path('', include('culinary_odissey.urls')),
+    path('menu/', include('app.urls')),
+
 ]
 
 if settings.DEBUG:

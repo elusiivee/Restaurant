@@ -10,3 +10,11 @@ def main(request):
     }
     return render(request, 'main_file.html', context=context)
 
+def menu(request):
+    category = DishCategory.objects.filter(is_visible=True)
+    dish = Dish.objects.filter(is_visible=True)
+    context = {
+        'categories':category,
+        'dishes' : dish,
+    }
+    return render(request, 'menu_second.html', context=context)

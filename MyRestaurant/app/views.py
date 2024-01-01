@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from .models import MainMenueItems
+from .models import MainMenueItems, Footer
 def menu(request):
-    category = MainMenueItems.objects.filter(is_visible=True)
-    return render(request, 'includes/menu.html')
+    categories = MainMenueItems.objects.filter(is_visible=True)
+    footer_info = Footer.objects.first()
+    return render(request, 'menu.html', {'categories': categories, 'footer_info': footer_info})
 

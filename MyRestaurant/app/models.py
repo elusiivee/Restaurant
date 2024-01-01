@@ -25,13 +25,13 @@ class Slider(models.Model):
     def __str__(self):
         return f'{self.title}'
 
-class Chef(models.Model):
+class Chefs(models.Model):
     name = models.CharField(max_length=100, verbose_name='name')
     status = models.CharField(max_length=100)
     description = models.CharField(max_length=255)
-    twitter_link = models.URLField(default='#')
-    facebook_link = models.URLField()
-    instagram_link = models.URLField()
+    twitter_link = models.URLField(blank=True)
+    facebook_link = models.URLField(blank=True)
+    instagram_link = models.URLField(blank=True)
     photo = models.ImageField(upload_to='chefs/', blank=True)
     is_visible = models.BooleanField(default=True)
 

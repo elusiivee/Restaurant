@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import MainMenueItems, Footer
+from .models import MainMenueItems, Footer, Slider
 
 
 @admin.register(MainMenueItems)
@@ -9,3 +9,4 @@ class MainMenuItemAdmin(admin.ModelAdmin):
     list_editable = ('is_visible', 'order',)
 
 admin.site.register(Footer)
+admin.site.register(Slider)

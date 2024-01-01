@@ -1,8 +1,12 @@
-from .models import MainMenueItems, Footer
+from .models import MainMenueItems, Footer, Slider
 
 def main_menu_items(request):
     items = MainMenueItems.objects.filter(is_visible=True)
     return {'main_menu': items}
+
+def slide_item(request):
+    items = Slider.objects.filter(is_visible=True)
+    return {'slide_item': items}
 
 def footer_items(request):
     items = Footer.objects.first()

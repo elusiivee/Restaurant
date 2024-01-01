@@ -16,7 +16,7 @@ class MainMenueItems(models.Model):
     class Meta:
         ordering = ('order',)
 
-class Slider (models.Model):
+class Slider(models.Model):
     title = models.CharField(max_length=200, verbose_name='slider title')
     photo = models.ImageField(upload_to='main_slider/', blank=True)
     is_visible = models.BooleanField(default=True)
@@ -24,6 +24,22 @@ class Slider (models.Model):
 
     def __str__(self):
         return f'{self.title}'
+
+class Chef(models.Model):
+    name = models.CharField(max_length=100, verbose_name='name')
+    status = models.CharField(max_length=100)
+    description = models.CharField(max_length=255)
+    twitter_link = models.URLField(default='#')
+    facebook_link = models.URLField()
+    instagram_link = models.URLField()
+    photo = models.ImageField(upload_to='chefs/', blank=True)
+    is_visible = models.BooleanField(default=True)
+
+    def __str__(self):
+        return f'{self.name}'
+
+    class Meta:
+        verbose_name_plural = 'Chefs'
 class Footer (models.Model):
     title = RichTextField()
     opening_hours=RichTextField()

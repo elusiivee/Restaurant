@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import MainMenueItems, Footer, Slider
+from .models import MainMenueItems, Footer, Slider, Chef
 
 
 @admin.register(MainMenueItems)
@@ -10,3 +10,4 @@ class MainMenuItemAdmin(admin.ModelAdmin):
 
 admin.site.register(Footer)
 admin.site.register(Slider)
+admin.site.register(Chef)

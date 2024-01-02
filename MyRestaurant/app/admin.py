@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import MainMenueItems, Footer, Slider, Chefs, Customers
+from .models import MainMenueItems, Footer, Slider, Chefs, Customers, Progress
 
 
 @admin.register(MainMenueItems)
@@ -15,4 +15,4 @@ class CustomersAdmin(admin.ModelAdmin):
 admin.site.register(Footer)
 admin.site.register(Slider)
 admin.site.register(Chefs)
-
+admin.site.register(Progress)

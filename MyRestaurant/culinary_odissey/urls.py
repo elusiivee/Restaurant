@@ -1,9 +1,9 @@
 from django.urls import path
-from .views import main, menu
+from .views import MainPage, Menu
 
-
+app_name='odyssey'
 
 urlpatterns = [
-    path('', main, name='home'),
-    path('menu/', menu, name='menu'),
+    path('', MainPage.as_view(), name='home'),
+    path('menu/', Menu.as_view(), name='menu'),
 ]

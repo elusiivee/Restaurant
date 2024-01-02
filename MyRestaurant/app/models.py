@@ -30,6 +30,13 @@ class Slider(models.Model):
     def __str__(self):
         return f'{self.title}'
 
+class Progress(models.Model):
+    title = models.CharField(max_length=100, verbose_name='progress title')
+    value = models.FloatField()
+    is_visible = models.BooleanField(default=True)
+
+    def __str__(self):
+        return f'{self.title}'
 
 class Chefs(models.Model):
     name = models.CharField(max_length=100, verbose_name='name')

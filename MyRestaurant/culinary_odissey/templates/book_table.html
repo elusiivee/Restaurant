@@ -6,8 +6,12 @@
 	          	<span class="subheading">Book a table</span>
 	            <h2 class="mb-4">Make Reservation</h2>
 	          </div>
-            <form action="#">
+            <form action="{% url 'odyssey:home' %}">
               <div class="row">
+                  {% csrf_token %}
+
+                  {{ reservation_form.as_p }}
+
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="">Name</label>
@@ -28,7 +32,7 @@
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="">Phone</label>
+                    <label for="">Date</label>
                     <input type="text" class="form-control" id="book_date" placeholder="Date">
                   </div>
                 </div>
@@ -40,17 +44,8 @@
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="">Person</label>
-                    <div class="select-wrap one-third">
-                      <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                      <select name="" id="" class="form-control">
-                        <option value="">Person</option>
-                        <option value="">1</option>
-                        <option value="">2</option>
-                        <option value="">3</option>
-                        <option value="">4+</option>
-                      </select>
-                    </div>
+                    <label for="">People</label>
+                    <input type="text" class="form-control" id="book_time" placeholder="#people">
                   </div>
                 </div>
                 <div class="col-md-12 mt-3">
@@ -62,8 +57,10 @@
             </form>
           </div>
           <div class="col-md-6 d-flex align-items-stretch pb-5 pb-md-0">
-						<div id="map"></div>
-					</div>
+						<div><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28185.511678040446!2d86.88604951856101!3d27.98811467050819!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e854a215bd9ebd%3A0x576dcf806abbab2!2z0JTQttC-0LzQvtC70YPQvdCz0LzQsA!5e0!3m2!1suk!2sde!4v1704202700097!5m2!1suk!2sde" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+
+          </div>
+
         </div>
 			</div>
 		</section>

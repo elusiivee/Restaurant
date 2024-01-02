@@ -4,38 +4,18 @@
     		<div class="row d-md-flex align-items-center justify-content-center">
     			<div class="col-lg-10">
     				<div class="row d-md-flex align-items-center">
-		          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-		            <div class="block-18">
-		              <div class="text">
-		                <strong class="number" data-number="18">0</strong>
-		                <span>Years of Experienced</span>
-		              </div>
-		            </div>
-		          </div>
-		          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-		            <div class="block-18">
-		              <div class="text">
-		                <strong class="number" data-number="15000">0</strong>
-		                <span>Happy Customers</span>
-		              </div>
-		            </div>
-		          </div>
-		          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-		            <div class="block-18">
-		              <div class="text">
-		                <strong class="number" data-number="100">0</strong>
-		                <span>Menus</span>
-		              </div>
-		            </div>
-		          </div>
-		          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-		            <div class="block-18">
-		              <div class="text">
-		                <strong class="number" data-number="20">0</strong>
-		                <span>Staffs</span>
-		              </div>
-		            </div>
-		          </div>
+
+                        {% for progress in progress_item %}
+                        <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+                            <div class="block-18">
+                              <div class="text">
+                                <strong class="number" data-number="{{ progress.value }}">0</strong>
+                                <span>{{ progress.title }}</span>
+                              </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
 	          </div>
           </div>
         </div>

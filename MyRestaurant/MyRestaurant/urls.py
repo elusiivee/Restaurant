@@ -17,8 +17,7 @@ Including another URLconf
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
-from culinary_odissey.views import main
-from app.views import menu
+
 from MyRestaurant import settings
 
 urlpatterns = [

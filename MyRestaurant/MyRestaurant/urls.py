@@ -24,6 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('culinary_odissey.urls')),
     path('menu/', include('app.urls')),
+    path('contact/', include('contact.urls')),
 
 ]
 

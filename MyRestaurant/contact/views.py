@@ -1,7 +1,10 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect
 from .forms import ContactForm
 from django.views.generic import TemplateView
 from django.contrib import messages
+from .models import ContactInfo
+
+
 
 class Contact_view(TemplateView):
     template_name = 'contact.html'
@@ -9,6 +12,7 @@ class Contact_view(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['contact_form'] = ContactForm()
+        context['contact_info'] = ContactInfo.objects.first()
         return context
 
     def post(self, request, *args, **kwargs):
@@ -21,5 +25,5 @@ class Contact_view(TemplateView):
 
         context = self.get_context_data(**kwargs)
         context['contact_form'] = ContactForm()
-        messages.error(request,'Errors in form Contact')
+        messages.error(request, 'Errors in form Contact')
         return render(request, 'contact.html', context=context)

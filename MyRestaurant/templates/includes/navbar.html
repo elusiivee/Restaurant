@@ -1,6 +1,6 @@
  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand">Culinary Odyssey</a>
+	      <a class="navbar-brand" href="/">Culinary Odyssey</a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
@@ -10,8 +10,10 @@
 {#                {% for item in main_menu %}#}
 {#                    <li class="nav-item active"><a href="{{ item.get_absolute_url }}" class="nav-link">{{ item.title}}</a></li>#}
 {#                {% endfor %}#}
-                <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
-                <li class="nav-item active"> <a href="{% url 'app:menu' %}" class="nav-link">Menu</a></li>
+                <li class="nav-item{% if request.path == '/' %} active{% endif %}"><a href="/" class="nav-link">Home</a></li>
+                <li class="nav-item{% if request.path == '/menu/' %} active{% endif %}"> <a href="{% url 'app:menu' %}" class="nav-link">Menu</a></li>
+                <li class="nav-item{% if request.path == '/contact/' %} active{% endif %}"> <a href="{% url 'contact:contact_page' %}" class="nav-link">Contact</a></li>
+
                 {#  add another link#}
 
 	        </ul>

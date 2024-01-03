@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ckeditor',
     'culinary_odissey.apps.CulinaryOdisseyConfig',
-    'app.apps.AppConfig'
+    'app.apps.AppConfig',
+    'contact.apps.ContactConfig',
 ]
 
 CKEDITOR_CONFIG = {

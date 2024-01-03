@@ -23,3 +23,4 @@ def customer_item(request):
 def footer_items(request):
     items = Footer.objects.first()
     return {'footer_item': items}
+

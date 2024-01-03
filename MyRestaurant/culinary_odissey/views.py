@@ -57,7 +57,7 @@ class Menu(TemplateView):
     template_name = './menu_second.html'
 
     def get_context_data(self, **kwargs):
-        context = self.get_context_data(**kwargs)
+        context = super().get_context_data(**kwargs)
         categories = DishCategory.objects.filter(is_visible=True)
         dish = Dish.objects.filter(is_visible=True)
         context['categories'] = categories

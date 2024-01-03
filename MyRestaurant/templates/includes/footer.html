@@ -1,44 +1,46 @@
 <footer class="ftco-footer ftco-bg-dark ftco-section">
-      <div class="container-fluid px-md-5 px-3">
+    <div class="container-fluid px-md-5 px-3">
         <div class="row mb-5">
-          <div class="col-md-6 col-lg-4">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Culinary Odyssey</h2>
-              {{ footer_item.title|safe}}
-              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
-                <li class="ftco-animate"><a href="{{ footer_item.twitter_link|safe}}"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="{{ footer_item.facebook_link|safe}}"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="{{ footer_item.instagram_link|safe}}"><span class="icon-instagram"></span></a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Open Hours</h2>
-              <ul class="list-unstyled open-hours">
-                <li class="d-flex"><span>{{ footer_item.opening_hours|safe}}</span></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="ftco-footer-widget mb-4">
-            	<h2 class="ftco-heading-2">Newsletter</h2>
-            	<p>{{ footer_item.newsletter|safe}}</p>
-              <form action="#" class="subscribe-form">
-                <div class="form-group">
-                  <input type="text" class="form-control mb-2 text-center" placeholder="Enter email address">
-                  <input type="submit" value="Subscribe" class="form-control submit px-3">
+            <div class="col-md-6 col-lg-4">
+                <div class="ftco-footer-widget mb-4">
+                    <h2 class="ftco-heading-2">Culinary Odyssey</h2>
+                    {{ footer_item.title|safe }}
+                    <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
+                        <li class="ftco-animate"><a href="{{ footer_item.twitter_link|safe }}"><span
+                                class="icon-twitter"></span></a></li>
+                        <li class="ftco-animate"><a href="{{ footer_item.facebook_link|safe }}"><span
+                                class="icon-facebook"></span></a></li>
+                        <li class="ftco-animate"><a href="{{ footer_item.instagram_link|safe }}"><span
+                                class="icon-instagram"></span></a></li>
+                    </ul>
                 </div>
-              </form>
             </div>
-          </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="ftco-footer-widget mb-4">
+                    <h2 class="ftco-heading-2">Open Hours</h2>
+                    <ul class="list-unstyled open-hours">
+                        <li class="d-flex"><span>{{ footer_item.opening_hours|safe }}</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="ftco-footer-widget mb-4">
+                    <h2 class="ftco-heading-2">Contact</h2>
+                    <p>{{ footer_item.newsletter|safe }}</p>
+
+                    <a href="#" class="thumb-menu img">
+                        <img style="height: 15rem;" src="/static/images/logo1.png" alt="Instagram Photo">
+                    </a>
+
+                </div>
+            </div>
 
         </div>
         <div class="row">
-          <div class="col-md-12 text-center">
+            <div class="col-md-12 text-center">
 
-            <p>{{ footer_item.copyright_text|safe }}</p>
-          </div>
+                <p>{{ footer_item.copyright_text|safe }}</p>
+            </div>
         </div>
-      </div>
-    </footer>
+    </div>
+</footer>

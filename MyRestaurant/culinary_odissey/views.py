@@ -77,3 +77,24 @@ class Menu(TemplateView):
         context['reservation_form'] = ReservationForm()
         messages.error(request,'Errors in form eEservation')
         return render(request, 'menu.html', context=context)
+
+class Reservation(TemplateView):
+    template_name = './reservation.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['reservation_form'] = ReservationForm()
+        return context
+
+    def post(self, request, *args, **kwargs):
+        reservation_form = ReservationForm(request.POST)
+
+        if reservation_form.is_valid():
+            reservation_form.save()
+            messages.success(request, 'Reservation done')
+            return redirect('odyssey:home')
+
+        context = self.get_context_data(**kwargs)
+        context['reservation_form'] = ReservationForm()
+        messages.error(request,'Errors in form eEservation')
+        return render(request, 'menu.html', context=context)

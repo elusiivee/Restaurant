@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'culinary_odissey.apps.CulinaryOdisseyConfig',
     'app.apps.AppConfig',
     'contact.apps.ContactConfig',
+    'blog.apps.BlogConfig',
 ]
 
 CKEDITOR_CONFIG = {

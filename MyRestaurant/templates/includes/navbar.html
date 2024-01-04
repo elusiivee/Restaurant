@@ -7,13 +7,12 @@
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-{#                {% for item in main_menu %}#}
-{#                    <li class="nav-item active"><a href="{{ item.get_absolute_url }}" class="nav-link">{{ item.title}}</a></li>#}
-{#                {% endfor %}#}
+
                 <li class="nav-item{% if request.path == '/' %} active{% endif %}"><a href="/" class="nav-link">Home</a></li>
                 <li class="nav-item{% if request.path == '/menu/' %} active{% endif %}"> <a href="{% url 'app:menu' %}" class="nav-link">Menu</a></li>
                 <li class="nav-item{% if request.path == '/contact/' %} active{% endif %}"> <a href="{% url 'contact:contact_page' %}" class="nav-link">Contact</a></li>
-                <li class="nav-item cta"><a href="{% url 'odyssey:boo_a_table' %}" class="nav-link">Book a table</a></li>
+                <li class="nav-item{% if request.path == '/blog/' %} active{% endif %}"> <a href="{% url 'blog:blog_page' %}" class="nav-link">Blog</a></li>
+                <li class="nav-item cta"><a href="{% url 'odyssey:book_a_table' %}" class="nav-link">Book a table</a></li>
                 {#  add another link#}
 
 	        </ul>

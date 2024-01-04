@@ -25,7 +25,7 @@ urlpatterns = [
     path('', include('culinary_odissey.urls')),
     path('menu/', include('app.urls')),
     path('contact/', include('contact.urls')),
-
+    path('blog/', include('blog.urls')),
 ]
 
 if settings.DEBUG:

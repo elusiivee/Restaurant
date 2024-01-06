@@ -7,6 +7,7 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
+
 # Create your views here.
 # def main(request):
 #     category = DishCategory.objects.filter(is_visible=True)
@@ -48,9 +49,8 @@ class MainPage(TemplateView):
 
         context = self.get_context_data(**kwargs)
         context['reservation_form'] = ReservationForm()
-        messages.error(request,'Errors in form Reservation')
+        messages.error(request, 'Errors in form Reservation')
         return render(request, 'main_file.html', context=context)
-
 
 
 class Menu(TemplateView):
@@ -75,8 +75,9 @@ class Menu(TemplateView):
 
         context = self.get_context_data(**kwargs)
         context['reservation_form'] = ReservationForm()
-        messages.error(request,'Errors in form eEservation')
+        messages.error(request, 'Errors in form eEservation')
         return render(request, 'menu.html', context=context)
+
 
 class Reservation(TemplateView):
     template_name = './reservation.html'
@@ -96,5 +97,5 @@ class Reservation(TemplateView):
 
         context = self.get_context_data(**kwargs)
         context['reservation_form'] = ReservationForm()
-        messages.error(request,'Errors in form eEservation')
+        messages.error(request, 'Errors in form Reservation')
         return render(request, 'menu.html', context=context)

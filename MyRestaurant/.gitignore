@@ -36,3 +36,5 @@ venv/
 # Log files
 *.log
 
+
+*.data.json

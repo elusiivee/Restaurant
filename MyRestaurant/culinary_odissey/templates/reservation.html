@@ -21,6 +21,8 @@
             height: 100%;
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/css/bootstrap-timepicker.min.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Monoton&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Miss+Fajardose&display=swap" rel="stylesheet">
@@ -43,6 +45,8 @@
     <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
     <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
 </head>
 
 </html>
@@ -82,10 +86,14 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     {{ field.label_tag }}
-                                    {{ field }}
-                                    {% if field.errors %}
-                                        <span class="text-danger">{{ field.errors|join:", " }}</span>
+                                    {% if field.name == 'date' %}
+                                        <input type="text" class="form-control datepicker" name="{{ field.name }}" value="{{ field.value|default:'' }}" placeholder="YYYY-MM-DD">
+                                    {% elif field.name == 'time' %}
+                                        <input type="text" class="form-control timepicker" name="{{ field.name }}" value="{{ field.value|default:'' }}" placeholder="HH:MM">
+                                    {% else %}
+                                        {{ field }}
                                     {% endif %}
+                                    {{ field.errors }}
                                 </div>
                             </div>
                         {% endfor %}
@@ -117,7 +125,9 @@
     </svg>
 </div>
 
-
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.min.js"></script>
 <script src="{% static 'js/jquery.min.js' %}"></script>
 <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
 <script src="{% static 'js/popper.min.js' %}"></script>
@@ -136,5 +146,44 @@
 <script src="{% static 'js/google-map.js' %}"></script>
 <script src="{% static 'js/main.js' %}"></script>
 
+
+
+<style>
+        .map-container {
+
+            overflow: hidden;
+            padding-bottom: 56.25%;
+            height: 0;
+        }
+
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+</style>
+
+
+<script>
+    // Date picker initialization
+    $(document).ready(function () {
+        $('.datepicker').datepicker({
+            format: 'yyyy-mm-dd',
+            autoclose: true,
+            todayHighlight: true,
+        });
+    });
+
+    // Time picker initialization
+    $(document).ready(function () {
+        $('.timepicker').timepicker({
+            showMeridian: false,
+            minuteStep: 1,
+            defaultTime: false
+        });
+    });
+</script>
 </body>
 </html>

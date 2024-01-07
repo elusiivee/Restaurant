@@ -5,7 +5,22 @@
     <title>Culinary Odyssey</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+        .map-container {
 
+            overflow: hidden;
+            padding-bottom: 56.25%;
+            height: 0;
+        }
+
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Monoton&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Miss+Fajardose&display=swap" rel="stylesheet">
@@ -60,36 +75,35 @@
                         <h2 class="mb-4">Make Reservation</h2>
                     </div>
                     <form action="{% url 'odyssey:home' %}" method="post" role="form">
-                        {% csrf_token %}
+                    {% csrf_token %}
 
-                        <div class="row">
-                            {% for field in reservation_form %}
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        {{ field.label_tag }}
-                                        {{ field }}
-                                        {{ field.errors }}
-                                    </div>
+                    <div class="row">
+                        {% for field in reservation_form %}
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    {{ field.label_tag }}
+                                    {{ field }}
+                                    {% if field.errors %}
+                                        <span class="text-danger">{{ field.errors|join:", " }}</span>
+                                    {% endif %}
                                 </div>
-                            {% endfor %}
-                        </div>
-
-                        <div class="col-md-12 mt-3">
-                            <div class="form-group">
-                                <input type="submit" value="Make a Reservation" class="btn btn-primary py-3 px-5">
                             </div>
+                        {% endfor %}
+                    </div>
+
+                    <div class="col-md-12 mt-3">
+                        <div class="form-group">
+                            <input type="submit" value="Make a Reservation" class="btn btn-primary py-3 px-5">
                         </div>
-                    </form>
+                    </div>
+                </form>
                 </div>
             </div>
             <div class="col-md-6 d-flex align-items-stretch pb-5 pb-md-0">
-                <div>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28185.511678040446!2d86.88604951856101!3d27.98811467050819!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e854a215bd9ebd%3A0x576dcf806abbab2!2z0JTQttC-0LzQvtC70YPQvdCz0LzQsA!5e0!3m2!1suk!2sde!4v1704202700097!5m2!1suk!2sde"
-                            width="800" height="800" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28185.51064670931!2d86.90437548705842!3d27.988118615424785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e854a215bd9ebd%3A0x576dcf806abbab2!2z0JTQttC-0LzQvtC70YPQvdCz0LzQsA!5e0!3m2!1suk!2sde!4v1704636524606!5m2!1suk!2sde" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                </div>
                 </div>
             </div>
-        </div>
     </div>
 </section>
 
@@ -99,9 +113,7 @@
 <!-- loader -->
 <div id="ftco-loader" class="show fullscreen">
     <svg class="circular" width="48px" height="48px">
-        <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/>
-        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
-                stroke="#F96D00"/>
+        <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/>
     </svg>
 </div>
 

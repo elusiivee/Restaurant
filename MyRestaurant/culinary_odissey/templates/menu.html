@@ -11,14 +11,14 @@
     <div class="row">
         {% for category in categories %}
             {% if category.is_visible %}
-                <div class="col-md-6 col-lg-4 menu-wrap">
+                <div class="col-md-6 col-lg-4 menu-wrap" >
                     <div class="heading-menu text-center ftco-animate">
                         <h3>{{ category.name }}</h3>
                     </div>
 
                     {% for dish in dishes %}
                         {% if dish.is_visible and dish.category == category %}
-                            <div class="menus d-flex ftco-animate">
+                            <div class="menus d-flex ftco-animate" style="height: 25%">
                                 <div class="menu-img img" style="background-image: url({{ dish.photo.url }});"></div>
                                 <div class="text">
                                     <div class="d-flex">

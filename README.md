@@ -1,21 +1,23 @@
-# Culinary Odyssey
+<h1>Culinary Odyssey</h1>
 
-Culinary Odyssey is a Django project for managing reservations and showcasing culinary experiences.
+<h2>Table of Contents</h2>
 
-## Table of Contents
+<h2>Getting Started</h2>
 
-## Getting Started
+<h3>Prerequisites</h3>
 
-### Prerequisites
+<p>Before you begin, ensure you have the following installed:</p>
 
-Before you begin, ensure you have the following installed:
+<ul>
+    <li>Python 3.x</li>
+    <li>Django</li>
+</ul>
 
-- Python 3.x
-- Django
+<h3>Installation</h3>
 
-### Installation
+<ol>
+    <li>Clone the repository:</li>
+</ol>
 
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/yourusername/culinary-odyssey.git
+<pre><code>git clone https://github.com/yourusername/culinary-odyssey.git
+</code></pre>

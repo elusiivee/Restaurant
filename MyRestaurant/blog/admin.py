@@ -5,7 +5,18 @@ from .models import Blog
 
 
 @admin.register(Blog)
-class ContactMessageAdmin(admin.ModelAdmin):
+class BlogAdmin(admin.ModelAdmin):
+    '''
+    Admin configuration for Blog model
+
+    Attributes:
+        list_display: tuple;
+        list_editable: tuple;
+
+    Note:
+        The 'is_visible' field is included in 'list_editable', allowing direct editing in admin.
+        'photo_src_tag' is returned from the function 'def photo_src_tag()' for allowing to display photos in admin.
+    '''
     list_display = ('title', 'photo_src_tag', 'updated_at', 'is_visible',)
     list_editable = ('is_visible',)
 

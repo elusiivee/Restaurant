@@ -1,5 +1,8 @@
-from .models import MainMenueItems, Footer, Slider, Chefs, Customers, Progress
+from .models import MainMenueItems, Footer, Slider, Chefs, Customers, Progress, About
 
+def about_item(request):
+    item = About.objects.first()
+    return {'about_item': item}
 def main_menu_items(request):
     items = MainMenueItems.objects.filter(is_visible=True)
     return {'main_menu': items}

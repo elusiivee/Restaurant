@@ -1,8 +1,12 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
 
-from .models import MainMenueItems, Footer, Slider, Chefs, Customers, Progress
+from .models import MainMenueItems, Footer, Slider, Chefs, Customers, Progress, About
 
+@admin.register(About)
+class MainMenuItemAdmin(admin.ModelAdmin):
+    list_display = ('title', 'description',)
+    list_editable = ('description',)
 
 @admin.register(MainMenueItems)
 class MainMenuItemAdmin(admin.ModelAdmin):

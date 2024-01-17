@@ -30,6 +30,11 @@ class Slider(models.Model):
     def __str__(self):
         return f'{self.title}'
 
+class About(models.Model):
+    title = models.CharField(max_length=50, verbose_name='menu item')
+    description = models.TextField()
+    def __str__(self):
+        return 'About section'
 class Progress(models.Model):
     title = models.CharField(max_length=100, verbose_name='progress title')
     value = models.FloatField()

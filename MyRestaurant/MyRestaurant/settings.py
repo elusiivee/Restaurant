@@ -86,6 +86,7 @@ TEMPLATES = [
                 'app.context_processors.customer_item',
                 'app.context_processors.progress_item',
                 'app.context_processors.about_item',
+                'app.context_processors.service_item',
             ],
         },
     },

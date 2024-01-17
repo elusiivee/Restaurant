@@ -7,39 +7,18 @@
           </div>
         </div>
         <div class="row">
+            {% for item in services_item %}
           <div class="col-md-4 d-flex align-self-stretch ftco-animate text-center">
             <div class="media block-6 services d-block">
-            	    <span class="user-img mb-4" style="background-image: url({{ customer.photo.url }})"></span>
+                <span style="background-image: url({{ item.photo.url }}); width: 200px; height: 200px;display: inline-block; background-size: cover;border-radius: 30%;"></span>
 
               <div class="media-body p-2 mt-3">
-                <h3 class="heading">Birthday Party</h3>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+                <h3 class="heading">{{ item.title}}</h3>
+                <p>{{ item.description}}</p>
               </div>
             </div>
           </div>
-
-          <div class="col-md-4 d-flex align-self-stretch ftco-animate text-center">
-            <div class="media block-6 services d-block">
-              <div class="icon d-flex justify-content-center align-items-center">
-            		<span class="flaticon-meeting"></span>
-              </div>
-              <div class="media-body p-2 mt-3">
-                <h3 class="heading">Business Meetings</h3>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex align-self-stretch ftco-animate text-center">
-            <div class="media block-6 services d-block">
-              <div class="icon d-flex justify-content-center align-items-center">
-            		<span class="flaticon-tray"></span>
-              </div>
-              <div class="media-body p-2 mt-3">
-                <h3 class="heading">Wedding Party</h3>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
-              </div>
-            </div>
-          </div>
+            {% endfor %}
         </div>
 			</div>
 		</section>

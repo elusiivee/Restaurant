@@ -1,4 +1,4 @@
-from .models import MainMenueItems, Footer, Slider, Chefs, Customers, Progress, About
+from .models import MainMenueItems, Footer, Slider, Chefs, Customers, Progress, About, Services
 
 def about_item(request):
     item = About.objects.first()
@@ -11,6 +11,9 @@ def slide_item(request):
     items = Slider.objects.filter(is_visible=True)
     return {'slide_item': items}
 
+def service_item(request):
+    items = Services.objects.filter(is_visible=True)
+    return {'services_item': items}
 def progress_item(request):
     items = Progress.objects.filter(is_visible=True)
     return {'progress_item': items}

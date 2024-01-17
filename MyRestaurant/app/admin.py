@@ -1,13 +1,23 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
 
-from .models import MainMenueItems, Footer, Slider, Chefs, Customers, Progress, About
+from .models import MainMenueItems, Footer, Slider, Chefs, Customers, Progress, About, Services
 
 @admin.register(About)
-class MainMenuItemAdmin(admin.ModelAdmin):
+class AboutItemAdmin(admin.ModelAdmin):
     list_display = ('title', 'description',)
     list_editable = ('description',)
 
+@admin.register(Services)
+class ServicesAdmin(admin.ModelAdmin):
+    list_display = ('title', 'description', 'photo_src_tag', 'is_visible')
+    list_editable = ('description','is_visible',)
+
+    def photo_src_tag(self, obj):
+        if obj.photo:
+            return mark_safe(f"<img src='{obj.photo.url}' width=50>")
+
+    photo_src_tag.short_description = 'Customer photo'
 @admin.register(MainMenueItems)
 class MainMenuItemAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}

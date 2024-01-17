@@ -5,6 +5,7 @@ from django.db import models
 from ckeditor.fields import RichTextField
 from django.core.files.images import ImageFile
 
+
 class MainMenueItems(models.Model):
     title = models.CharField(max_length=50, verbose_name='menu item')
     slug = models.SlugField(max_length=50, db_index=True, verbose_name='url')
@@ -30,11 +31,15 @@ class Slider(models.Model):
     def __str__(self):
         return f'{self.title}'
 
+
 class About(models.Model):
     title = models.CharField(max_length=50, verbose_name='menu item')
     description = models.TextField()
+
     def __str__(self):
         return 'About section'
+
+
 class Progress(models.Model):
     title = models.CharField(max_length=100, verbose_name='progress title')
     value = models.FloatField()
@@ -42,6 +47,19 @@ class Progress(models.Model):
 
     def __str__(self):
         return f'{self.title}'
+
+
+class Services(models.Model):
+    title = models.CharField(max_length=50, unique=True)
+    description = models.TextField()
+    photo = models.ImageField(upload_to='services/', )
+    is_visible = models.BooleanField(default=True)
+    def __str__(self):
+        return f'{self.title}'
+
+    class Meta:
+        verbose_name_plural = 'Services'
+
 
 class Chefs(models.Model):
     name = models.CharField(max_length=100, verbose_name='name')
@@ -63,7 +81,7 @@ class Chefs(models.Model):
 class Customers(models.Model):
     name = models.CharField(max_length=100, verbose_name='name')
     comment = models.CharField(max_length=255)
-    photo = models.ImageField(upload_to='customers/',)
+    photo = models.ImageField(upload_to='customers/', )
     is_visible = models.BooleanField(default=True)
 
     def __str__(self):
@@ -84,4 +102,3 @@ class Footer(models.Model):
 
     def __str__(self):
         return 'Footer info'
-

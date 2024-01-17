@@ -1,7 +1,23 @@
 from django import forms
 from .models import Reservation
 
+
 class ReservationForm(forms.ModelForm):
+    '''
+   Form for handling reservation submissions.
+
+   Attributes:
+       name (CharField): Input field for the customer's name.
+       email (EmailField): Input field for the customer's email address.
+       phone (CharField): Input field for the customer's phone number.
+       date (DateField): Input field for the reservation date.
+       time (TimeField): Input field for the reservation time.
+       people (IntegerField): Input field for the number of people in the reservation.
+
+   Meta:
+       model (Reservation): Specifies the model associated with the form.
+       fields (tuple): List of fields to include in the form.
+   '''
     name = forms.CharField(label='Name', widget=forms.TextInput(
         attrs={'class': 'form-control', 'placeholder': 'Your Name'}
     ))

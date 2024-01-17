@@ -28,6 +28,16 @@ from django.urls import reverse
 #     return render(request, 'menu_second.html', context=context)
 
 class MainPage(TemplateView):
+    '''
+    View for rendering the main page and handling reservation form submissions.
+
+    Attributes:
+        template_name (str): HTML template used for rendering the main page.
+
+    Methods:
+        get_context_data(**kwargs): Retrieves context data for rendering the template.
+        post(request, *args, **kwargs): Handles POST requests for reservation form submissions.
+    '''
     template_name = './main_file.html'
 
     def get_context_data(self, **kwargs):
@@ -54,6 +64,16 @@ class MainPage(TemplateView):
 
 
 class Menu(TemplateView):
+    '''
+    View for rendering the manu page and handling reservation form submissions.
+
+    Attributes:
+        template_name (str): HTML template used for rendering the manu page.
+
+    Methods:
+        get_context_data(**kwargs): Retrieves context data for rendering the template.
+        post(request, *args, **kwargs): Handles POST requests for reservation form submissions.
+    '''
     template_name = './menu_second.html'
 
     def get_context_data(self, **kwargs):
@@ -80,6 +100,16 @@ class Menu(TemplateView):
 
 
 class Reservation(TemplateView):
+    '''
+    View for rendering the reservation page and handling reservation form submissions.
+
+    Attributes:
+        template_name (str): HTML template used for rendering the reservation page.
+
+    Methods:
+        get_context_data(**kwargs): Retrieves context data for rendering the template.
+        post(request, *args, **kwargs): Handles POST requests for reservation form submissions.
+    '''
     template_name = './reservation.html'
 
     def get_context_data(self, **kwargs):

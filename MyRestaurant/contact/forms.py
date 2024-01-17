@@ -1,7 +1,22 @@
 from django import forms
 from .models import ContactMessage
 
+
 class ContactForm(forms.ModelForm):
+    '''
+    Form for handling contact messages.
+
+    Attributes:
+        name (CharField): Input field for the sender's name.
+        email (EmailField): Input field for the sender's email address.
+        subject (CharField): Input field for the subject of the contact message.
+        message (CharField): Input field for the content of the contact message.
+
+    Meta:
+        model (ContactMessage): Specifies the model associated with the form.
+        fields (list): List of fields to include in the form.
+    '''
+
     class Meta:
         model = ContactMessage
         fields = ['name', 'email', 'subject', 'message']
@@ -25,5 +40,3 @@ class ContactForm(forms.ModelForm):
         label='Message',
         widget=forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Your Message'})
     )
-
-

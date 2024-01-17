@@ -5,14 +5,14 @@ from django.db import models
 # Create your models here.
 class Blog(models.Model):
     '''
-    Model representing chefs in the culinary team.
+    Model representing blog.
 
     Fields:
         title (CharField): Title of the section 'services' item.
         content (RichTextField): Content of the blog.
         photo (ImageField): Photo of the chef, uploaded to 'blog/' directory.
-        (BooleanField): Indicates when blog is created (True/False).
-        is_visible (BooleanField): Indicates whether the chef's profile should be visible on the website.
+        updated_at (BooleanField): Indicates when blog is created (True/False).
+        is_visible (BooleanField): Indicates whether the blog should be visible on the website.
     '''
     title = models.CharField(max_length=60, )
     content = RichTextField()

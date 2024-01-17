@@ -107,6 +107,7 @@ class Services(models.Model):
     description = models.TextField()
     photo = models.ImageField(upload_to='services/', )
     is_visible = models.BooleanField(default=True)
+
     def __str__(self):
         return f'{self.title}'
 
@@ -146,7 +147,7 @@ class Chefs(models.Model):
 
 class Customers(models.Model):
     '''
-    Model representing chefs in the culinary team.
+    Model representing customers.
 
     Fields:
         name (CharField): Customer's name.

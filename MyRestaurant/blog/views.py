@@ -1,6 +1,7 @@
 from django.views.generic import TemplateView
 from .models import Blog
 
+
 class Blog_view(TemplateView):
     '''
     View for rendering the blog page.

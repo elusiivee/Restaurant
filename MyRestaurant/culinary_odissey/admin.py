@@ -27,6 +27,10 @@ class DishAdmin(admin.ModelAdmin):
     list_filter = ('category', 'price', 'is_visible',)
 
     def photo_src_tag(self, obj):
+        '''
+        Generate HTML-teg img to display photo in admin
+        :param obj:
+        '''
         if obj.photo:
             return mark_safe(f"<img src='{obj.photo.url}'width='50' height='50' style='object-fit: cover;'>")
 

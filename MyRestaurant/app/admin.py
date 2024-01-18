@@ -38,6 +38,10 @@ class ServicesAdmin(admin.ModelAdmin):
     list_editable = ('description', 'is_visible',)
 
     def photo_src_tag(self, obj):
+        '''
+        Generate HTML-teg img to display photo in admin
+        :param obj:
+        '''
         if obj.photo:
             return mark_safe(f"<img src='{obj.photo.url}' width=50>")
 
@@ -81,6 +85,10 @@ class CustomersAdmin(admin.ModelAdmin):
     list_editable = ('is_visible',)
 
     def photo_src_tag(self, obj):
+        '''
+        Generate HTML-teg img to display photo in admin
+        :param obj:
+        '''
         if obj.photo:
             return mark_safe(f"<img src='{obj.photo.url}' width=50>")
 
@@ -108,17 +116,14 @@ class ChefsAdmin(admin.ModelAdmin):
     list_editable = ('is_visible',)
 
     def photo_src_tag(self, obj):
+        '''
+        Generate HTML-teg img to display photo in admin
+        :param obj:
+        '''
         if obj.photo:
             return mark_safe(f"<img src='{obj.photo.url}'width='50' height='50' style='object-fit: cover;'>")
 
     photo_src_tag.short_description = 'Customer photo'
 
-
-def photo_src_tag(self, obj):
-    if obj.photo:
-        return mark_safe(f"<img src='{obj.photo.url}'width='50' height='50' style='object-fit: cover;'>")
-
-
-photo_src_tag.short_description = 'Dish photo'
 
 admin.site.register(Progress)

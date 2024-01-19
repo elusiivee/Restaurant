@@ -106,6 +106,7 @@ class ServicesTest(TestCase):
         self.assertEqual(services_item.description, "Description1")
         self.assertTrue(services_item.is_visible)
 
+
 class ChefsTest(TestCase):
     '''
     Class ChefsTest testing model Chefs
@@ -119,7 +120,8 @@ class ChefsTest(TestCase):
     def setUp(self):
         Chefs.objects.create(
             name='Item1', status='Status1', description='Description1',
-            twitter_link='https://twitter.com/chef1', facebook_link='https://www.facebook.com/chef1', instagram_link='https://www.instagram.com/chef1',
+            twitter_link='https://twitter.com/chef1', facebook_link='https://www.facebook.com/chef1',
+            instagram_link='https://www.instagram.com/chef1',
             is_visible=True,
         )
 
@@ -133,6 +135,7 @@ class ChefsTest(TestCase):
         self.assertEqual(chefs_item.facebook_link, 'https://www.facebook.com/chef1')
         self.assertEqual(chefs_item.instagram_link, 'https://www.instagram.com/chef1')
         self.assertTrue(chefs_item.is_visible)
+
 
 class CustomersTest(TestCase):
     '''
@@ -170,7 +173,8 @@ class FooterTest(TestCase):
     def setUp(self):
         Footer.objects.create(
             title='Item1', opening_hours='Mon-Fri: 9am-6pm, Sat-Sun: 8am-4pm', newsletter='New news1',
-            twitter_link='https://twitter.com/chef1', facebook_link='https://www.facebook.com/chef1', instagram_link='https://www.instagram.com/chef1',
+            twitter_link='https://twitter.com/chef1', facebook_link='https://www.facebook.com/chef1',
+            instagram_link='https://www.instagram.com/chef1',
             copyright_text="All rights reserved.",
         )
 

@@ -8,6 +8,7 @@ class ContactFormTest(TestCase):
     '''
     Class for testing forms from ContactForm.
     '''
+
     def test_valid_data(self):
         form = ContactForm(data={
             'name': 'Mr Test',
@@ -27,9 +28,10 @@ class ContactFormTest(TestCase):
         self.assertFalse(form.is_valid())
         print(form.errors)  # Print the form errors
 
+
 class ContactInfoTest(TestCase):
     '''
-    Class BlogTest testing model ContactInfo
+    Class ContactInfoTest testing model ContactInfo
 
     Methods:
         setUp(self): Creates a sample contact_info item for testing.
@@ -45,4 +47,4 @@ class ContactInfoTest(TestCase):
 
         self.assertEqual(contact_info.address, "Item1")
         self.assertEqual(contact_info.phone, '12341232')
-        self.assertTrue(contact_info.email, 'test@gmail.com')
+        self.assertEqual(contact_info.email, 'test@gmail.com')

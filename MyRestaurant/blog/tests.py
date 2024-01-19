@@ -1,5 +1,7 @@
 from django.test import TestCase
 from .models import Blog
+
+
 class BlogTest(TestCase):
     '''
     Class BlogTest testing model Blog
@@ -7,7 +9,7 @@ class BlogTest(TestCase):
     Methods:
         setUp(self): Creates a sample blog item for testing.
 
-        test_blog_item_attributes(self): Tests the attributes of the menu item created in setUp.
+        test_blog_item_attributes(self): Tests the attributes of the blog item created in setUp.
     '''
 
     def setUp(self):

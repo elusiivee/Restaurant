@@ -1,6 +1,7 @@
 from django.test import TestCase
 
 from .forms import ContactForm
+from .models import ContactInfo
 
 
 class ContactFormTest(TestCase):
@@ -25,3 +26,23 @@ class ContactFormTest(TestCase):
         })
         self.assertFalse(form.is_valid())
         print(form.errors)  # Print the form errors
+
+class ContactInfoTest(TestCase):
+    '''
+    Class BlogTest testing model ContactInfo
+
+    Methods:
+        setUp(self): Creates a sample contact_info item for testing.
+
+        test_contact_info_item_attributes(self): Tests the attributes of the contact_info item created in setUp.
+    '''
+
+    def setUp(self):
+        ContactInfo.objects.create(address='Item1', phone='12341232', email='test@gmail.com')
+
+    def test_contact_info_item_attributes(self):
+        contact_info = ContactInfo.objects.get(address="Item1")
+
+        self.assertEqual(contact_info.address, "Item1")
+        self.assertEqual(contact_info.phone, '12341232')
+        self.assertTrue(contact_info.email, 'test@gmail.com')

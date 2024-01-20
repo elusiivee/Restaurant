@@ -29,7 +29,7 @@ class DishCategory(models.Model):
         verbose_name_plural = 'Disch categories'
         ordering = ('order',)
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f'{self.name}'
 
     def __iter__(self):
@@ -78,7 +78,7 @@ class Dish(models.Model):
         ]
         unique_together = ['id', 'slug']
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f'{self.name}'
 
 
@@ -117,7 +117,7 @@ class Reservation(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f'{self.name} - {self.people}'
 
     class Meta:

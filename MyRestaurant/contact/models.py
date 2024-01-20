@@ -14,7 +14,7 @@ class ContactInfo(models.Model):
     phone = models.CharField(max_length=200)
     email = models.EmailField()
 
-    def __str__(self):
+    def __str__(self) -> str:
         return 'Contact info'
 
 
@@ -37,7 +37,7 @@ class ContactMessage(models.Model):
     is_processed = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"{self.name} - {self.email}"
 
     class Meta:

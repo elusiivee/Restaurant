@@ -6,5 +6,4 @@ app_name = 'app'
 urlpatterns = [
     path('', menu, name='menu'),
 
-
 ]

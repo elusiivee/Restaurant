@@ -30,7 +30,7 @@ class MainMenueItems(models.Model):
         '''
         return self.slug
 
-    def __str__(self):
+    def __str__(self) -> str:
         '''
         String representation of the menu item, used in admin.
         '''
@@ -56,7 +56,7 @@ class Slider(models.Model):
     photo = models.ImageField(upload_to='main_slider/', blank=True)
     is_visible = models.BooleanField(default=True)
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f'{self.title}'
 
 
@@ -71,7 +71,7 @@ class About(models.Model):
     title = models.CharField(max_length=50, verbose_name='menu item')
     description = models.TextField()
 
-    def __str__(self):
+    def __str__(self) -> str:
         return 'About section'
 
 
@@ -89,7 +89,7 @@ class Progress(models.Model):
     value = models.FloatField()
     is_visible = models.BooleanField(default=True)
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f'{self.title}'
 
 
@@ -108,7 +108,7 @@ class Services(models.Model):
     photo = models.ImageField(upload_to='services/', )
     is_visible = models.BooleanField(default=True)
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f'{self.title}'
 
     class Meta:
@@ -138,7 +138,7 @@ class Chefs(models.Model):
     photo = models.ImageField(upload_to='chefs/', blank=True)
     is_visible = models.BooleanField(default=True)
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f'{self.name}'
 
     class Meta:
@@ -160,7 +160,7 @@ class Customers(models.Model):
     photo = models.ImageField(upload_to='customers/', )
     is_visible = models.BooleanField(default=True)
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f'{self.name}'
 
     class Meta:
@@ -188,5 +188,5 @@ class Footer(models.Model):
     instagram_link = models.URLField(blank=True)
     copyright_text = RichTextField()
 
-    def __str__(self):
+    def __str__(self) -> str:
         return 'Footer info'

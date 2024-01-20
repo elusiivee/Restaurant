@@ -1,7 +1,7 @@
 from django.urls import path
 from .views import MainPage, Menu, Reservation
 
-app_name='odyssey'
+app_name = 'odyssey'
 
 urlpatterns = [
     path('', MainPage.as_view(), name='home'),

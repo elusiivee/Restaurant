@@ -20,7 +20,7 @@ class Blog(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     is_visible = models.BooleanField(default=True)
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f'{self.title}'
 
     class Meta:
